@@ -25,9 +25,9 @@ public class Testing02 {
 
     @Test(timeout = 1500)
     public void testTask2() throws Exception {
-        run("27").include("Да");
-        run("28").include("Нет");
-        run("0").include("Да");
+        run("27").include("Делится");
+        run("28").include("Не делится");
+        run("0").include("Делится");
     }
 
     @Test(timeout = 1500)
