@@ -50,7 +50,7 @@ public class Testing05 {
     @Test(timeout = 1500)
     public void testTask5() throws Exception {
         run("abc cde def").include("abcdef");
-        run("Тестовая строка").include("Тесоваярк");
+        run("тестовая строка").include("тесоваярк");
     }
 
     @Test(timeout = 1500)
