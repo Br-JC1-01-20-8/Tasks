@@ -1,13 +1,13 @@
 package jc01_2020.classwork.in_out_streams;
 
-import java.io.IOException;
-import java.time.LocalDate;
 import java.util.Scanner;
 
+import static jc01_2020.classwork.in_out_streams.Helper.*;
+
 public class Main {
-    public static void main(String[] args) throws IOException {
-//        Employee emp1 = new Employee("Vasya", LocalDate.of(2020, 3, 9), 1);
-//        Helper.storeEmployee(emp1);
+
+
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean continueLoop = true;
 
@@ -21,10 +21,19 @@ public class Main {
 
             switch (scanner.nextInt()) {
                 case 1:
+                    addEmployee();
+                    break;
                 case 2:
+                    moveToDep();
+                    break;
                 case 3:
+                    fireEmployee();
+                    break;
                 case 4:
+                    checkBirthday();
+                    break;
                 case 5:
+                    continueLoop = false;
                 default:
             }
         }

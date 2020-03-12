@@ -1,8 +1,9 @@
 package jc01_2020.classwork.in_out_streams;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Employee {
+public class Employee implements Serializable {
     private String name;
     private LocalDate birthDate;
     private int depNumber;
