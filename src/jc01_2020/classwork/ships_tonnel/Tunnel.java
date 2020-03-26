@@ -1,4 +1,4 @@
-package jc01_2020.classwork.task;
+package jc01_2020.classwork.ships_tonnel;
 
 import java.util.ArrayList;
 import java.util.List;
