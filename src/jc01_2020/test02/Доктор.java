@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Доктор implements Employee, Serializable {
 
+    private static final long serialVersionUID = 1408444340168537086L;
     private String name;
     private Department department;
     private LocalDate startDate;

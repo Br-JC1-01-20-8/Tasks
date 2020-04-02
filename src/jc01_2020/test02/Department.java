@@ -20,9 +20,10 @@ public enum  Department {
         this.value = value;
     }
 
-    public static Department getDepartment(/*тут можно что-нибудь написать*/) {
-        /*тут можно что-нибудь написать*/
-        return null;
+    public static Department getDepartment(String simpleName) {
+        if (simpleName.contains("Повар")) return A1;
+        else if (simpleName.contains("Доктор")) return A2;
+        else return A3;
     }
 
 }

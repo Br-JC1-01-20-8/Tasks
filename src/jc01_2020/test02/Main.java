@@ -20,18 +20,40 @@ package jc01_2020.test02;
  *
  */
 
+import java.io.*;
+import java.time.LocalDate;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Main {
 
     // Изменить на реальный путь после копирования файлов
     public static final String PATH_FROM = "src/jc01_2020/test02/resource/secret.dat";
     public static final String PATH_TO = "src/jc01_2020/test02/resource/result.txt";
 
-    public static void main(String[] args) {
-        Employee employee = getEmployee();
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        Employee employee = Helper.getEmployee();
+        employee.setDepartment(Department.getDepartment(employee.getClass().getSimpleName()));
+        employee.setEndDate(LocalDate.now());
+        employee.setWorkPeriod((int) employee.calculateWorkPeriod());
+        List<Reward> rewards = employee.getRewards()
+                .stream()
+                .peek(reward -> reward.setName(String.format("%s - %s", reward.getDate(), reward.getName())))
+                .sorted(Comparator.comparing(Reward::getDate))
+                .collect(Collectors.toList());
+        employee.setRewards(rewards);
+        write(employee.print());
     }
 
-    public static Employee getEmployee() {
-        return null;
+    public static void write(String text) {
+        try {
+            FileWriter writer = new FileWriter(PATH_TO);
+            writer.write(text);
+            writer.close();
+        } catch (IOException e) {
+
+        }
     }
 
 }

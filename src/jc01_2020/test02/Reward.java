@@ -32,4 +32,11 @@ public class Reward implements Serializable {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Reward{" + "\n" +
+                "date=" + date + "\n" +
+                ", name='" + name + '\'' + "\n" +
+                '}';
+    }
 }
